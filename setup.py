@@ -19,15 +19,6 @@ if device_capability:
         f"--generate-code=arch=compute_{device_capability},code=sm_{device_capability}"
     )
 
-ext_modules = [
-    CUDAExtension(
-        "megablocks_ops",
-        ["csrc/ops.cu"],
-        include_dirs=["csrc"],
-        extra_compile_args={"cxx": ["-fopenmp"], "nvcc": nvcc_flags},
-    )
-]
-
 install_requires=[
     "triton>=2.1.0",
     "stanford-stk>=0.0.6",

@@ -3,4 +3,4 @@
 import torch
 
 def histogram(x, bins):
-    return torch.histogram(x, bins)
+    return torch.histogram(x, bins).hist
